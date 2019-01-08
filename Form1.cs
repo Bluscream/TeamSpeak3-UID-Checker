@@ -6,16 +6,21 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
+using System.IO;
 using System.Windows.Forms;
 
 namespace UIDChecker
 {
     public partial class Form1 : Form
     {
-        public string[] uids;
         public Form1()
         {
             InitializeComponent();
+            if (File.Exists("uids.txt"))
+            {
+                listBox1.Items.AddRange(File.ReadAllLines("uids.txt").Cast<object>().ToArray());
+            }
         }
 
         private void enterUIDsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -32,9 +37,8 @@ namespace UIDChecker
             var str = listBox1.SelectedItem.ToString();
             if (string.IsNullOrEmpty(str)) return;
             // str = Uri.HexEscape(str.ToCharArray());
-            // str = System.Web.HttpUtility.UrlEncode(url);
-            str = Uri.EscapeUriString(str);
-            //MessageBox.Show(str);
+            str = HttpUtility.UrlEncode(str);
+            // str = Uri.EscapeUriString(str);
             webBrowser1.Navigate($"http://ts3index.com/?page=searchclient&uid={str}");
             webBrowser2.Navigate($"http://www.tsviewer.com/index.php?page=userinfo&ident={str}");
         }

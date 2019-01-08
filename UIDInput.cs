@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,7 @@ namespace UIDChecker
                 if (string.IsNullOrWhiteSpace(line)) continue;
                 mainForm.listBox1.Items.Add(line.Trim());
             }
+            File.WriteAllLines("uids.txt", mainForm.listBox1.Items.Cast<string>().ToArray());
             this.Close();
         }
     }

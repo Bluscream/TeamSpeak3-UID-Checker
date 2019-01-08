@@ -37,6 +37,7 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
+            this.loadFromDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -46,7 +47,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.enterUIDsToolStripMenuItem});
+            this.enterUIDsToolStripMenuItem,
+            this.loadFromDatabaseToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(944, 24);
@@ -74,10 +76,11 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(173, 28);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(167, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(759, 732);
+            this.tabControl1.Size = new System.Drawing.Size(777, 736);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -86,7 +89,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(751, 706);
+            this.tabPage1.Size = new System.Drawing.Size(769, 710);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "TS3Index";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -98,9 +101,9 @@
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(745, 700);
+            this.webBrowser1.Size = new System.Drawing.Size(763, 704);
             this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("https://ts3index.com", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("", System.UriKind.Relative);
             // 
             // tabPage2
             // 
@@ -108,7 +111,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(751, 706);
+            this.tabPage2.Size = new System.Drawing.Size(769, 710);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "TSViewer";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -120,9 +123,16 @@
             this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser2.Name = "webBrowser2";
             this.webBrowser2.ScriptErrorsSuppressed = true;
-            this.webBrowser2.Size = new System.Drawing.Size(745, 700);
+            this.webBrowser2.Size = new System.Drawing.Size(763, 704);
             this.webBrowser2.TabIndex = 0;
-            this.webBrowser2.Url = new System.Uri("https://tsviewer.com", System.UriKind.Absolute);
+            this.webBrowser2.Url = new System.Uri("", System.UriKind.Relative);
+            // 
+            // loadFromDatabaseToolStripMenuItem
+            // 
+            this.loadFromDatabaseToolStripMenuItem.Enabled = false;
+            this.loadFromDatabaseToolStripMenuItem.Name = "loadFromDatabaseToolStripMenuItem";
+            this.loadFromDatabaseToolStripMenuItem.Size = new System.Drawing.Size(127, 20);
+            this.loadFromDatabaseToolStripMenuItem.Text = "Load From Database";
             // 
             // Form1
             // 
@@ -156,6 +166,7 @@
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.WebBrowser webBrowser2;
+        private System.Windows.Forms.ToolStripMenuItem loadFromDatabaseToolStripMenuItem;
     }
 }
 
