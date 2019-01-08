@@ -25,7 +25,7 @@ namespace UIDChecker
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 mainForm = (Form1)Owner;
+            MainForm mainForm = (MainForm)Owner;
             mainForm.listBox1.Items.Clear();
             foreach (var line in this.textBox1.Lines)
             {
